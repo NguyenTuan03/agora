@@ -1,0 +1,8 @@
+{
+  "name": "React Agora Video Chat",
+  "description": "Video chat application using React and Agora",
+  "requestFramePermissions": [
+    "camera",
+    "microphone"
+  ]
+}

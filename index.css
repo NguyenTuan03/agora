@@ -1,0 +1,231 @@
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
+    Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f0f2f5;
+  color: #333;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+#root {
+  width: 100%;
+  max-width: 900px;
+  height: 90vh;
+  max-height: 700px;
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.lobby,
+.call-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  height: 100%;
+  box-sizing: border-box;
+}
+
+h1 {
+  font-size: 2.5rem;
+  color: #007bff;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  width: 100%;
+  max-width: 300px;
+}
+
+label {
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+}
+
+input {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+  text-align: center;
+}
+
+.button-group {
+  display: flex;
+  gap: 1rem;
+}
+
+button {
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.1s ease;
+  color: white;
+}
+
+button:active {
+  transform: scale(0.98);
+}
+
+.create-btn {
+  background-color: #28a745;
+}
+
+.create-btn:hover {
+  background-color: #218838;
+}
+
+.join-btn {
+  background-color: #007bff;
+}
+
+.join-btn:hover {
+  background-color: #0056b3;
+}
+
+.app-id-warning {
+  background-color: #fff3cd;
+  color: #856404;
+  padding: 1rem;
+  border: 1px solid #ffeeba;
+  border-radius: 8px;
+  margin-top: 1rem;
+  max-width: 350px;
+  text-align: center;
+}
+
+/* Call Container */
+.call-container {
+  position: relative;
+  padding: 0;
+}
+
+/* Videos Wrapper */
+.videos-wrapper {
+  position: relative;
+  width: 100%;
+  flex: 1;
+  min-height: 360px;
+  background-color: #000;
+  color: #fff;
+  overflow: hidden;
+}
+
+/* ⭐ QUAN TRỌNG: Video Players */
+.video-player {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: #000;
+}
+
+/* Remote Video - Full screen */
+#remote-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #1a1a1a;
+  z-index: 1;
+}
+
+#remote-video p {
+  font-size: 1.2rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin: 0;
+  z-index: 2;
+}
+
+/* Local Video - Picture in Picture */
+#local-video {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  width: 240px;
+  height: 180px;
+  border: 2px solid #fff;
+  border-radius: 8px;
+  background: #000;
+  z-index: 10;
+}
+
+/* ⭐ BỎ TẤT CẢ CSS cho .video-player > video */
+/* Để Agora SDK tự quản lý video element */
+
+/* Channel Info */
+.channel-info {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  z-index: 20;
+}
+
+/* Join Toast */
+.join-toast {
+  position: absolute;
+  top: 70px;
+  left: 20px;
+  background: rgba(0, 0, 0, 0.7);
+  color: #fff;
+  padding: 8px 12px;
+  border-radius: 8px;
+  z-index: 20;
+  font-size: 0.9rem;
+}
+
+/* Controls */
+.controls {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+  z-index: 30;
+}
+
+.controls button {
+  background: rgba(0, 0, 0, 0.7);
+  color: #fff;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background-color 0.2s ease;
+}
+
+.controls button:hover {
+  background: rgba(0, 0, 0, 0.9);
+}
+
+.controls button:active {
+  transform: scale(0.95);
+}
